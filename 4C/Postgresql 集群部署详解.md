@@ -7,7 +7,12 @@ grammar_cjkRuby: true
 
 # 环境准备
 
-|   名称  |版本     | 备注    |
-| --- | --- | --- |
-|   CentOS | 7.x     |     |
-|    Postgresql | 12.x    |     |
+![环境信息](./attachments/1588227709930.table.html)
+
+# 前提准备
+更新安装包
+
+``` shell?linenums
+yum clean all && yum makecache && yum update -y
+```
+
