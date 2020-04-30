@@ -15,4 +15,10 @@ grammar_cjkRuby: true
 ``` shell?linenums
 yum clean all && yum makecache && yum update -y
 ```
+同步时间
+```shell?linenums
+date -s "2020-03-03 10:00:20" && clock -w
+yum install ntp -y
+ntpdate -u 0.centos.pool.ntp.org
+```
 
