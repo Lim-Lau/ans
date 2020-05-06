@@ -24,7 +24,11 @@ date -s "2020-03-03 10:00:20" && clock -w
 yum install ntp -y
 ntpdate -u 0.centos.pool.ntp.org
 ```
-
+# 创建postgres用户
+```shell?linenums
+groupadd postgres
+useradd -g postgres postgres
+```
 # 安装
 
 > 可参加 [postgresql官网](https://www.postgresql.org/download/linux/redhat/)安装说明。
@@ -96,3 +100,10 @@ Environment=PGDATA=/app/pgsql/data/
 
 ```
 ## enable automatic start，以root身份
+```shell?linenums
+systemctl enable postgresql-12
+
+systemctl start postgresql-12
+```
+
+## 
