@@ -106,4 +106,55 @@ systemctl enable postgresql-12
 systemctl start postgresql-12
 ```
 
-## 
+## 登录postgresql并设置密码，postgresql在安装时默认添加用户postgres
+
+```shell?linenums
+# su - postgres
+
+psql
+
+ALTER USER postgres WITH PASSWORD '123456';
+\q
+```
+## 允许远程登录
+1）修改pg_hba.conf文件
+
+```shell?linenums
+# 默认路径时：
+
+vi /var/lib/pgsql/12/data/pg_hba.conf
+
+# 指定路径时：
+
+vi /app/pgsql/data/pg_hba.conf
+
+# IPv4 local connections:
+
+host all all 0.0.0.0/0 md5
+
+
+```
+2） 修改postgresql.conf
+```shell?linenums
+# 默认路径时：
+
+vi /var/lib/pgsql/12/data/postgresql.conf
+
+#指定路径时：
+
+vi /app/pgsql/data/postgresql.conf
+
+listen_addresses = '*'
+```
+3）重启服务
+```shell?linenums
+systemctl restart postgresql-12
+
+netstat -ltpn | grep 5432
+```
+4）防火墙
+```shell?linenums
+firewall-cmd --zone=public --add-port=5432/tcp --permanent
+
+firewall-cmd --reload
+```
