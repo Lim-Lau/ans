@@ -21,3 +21,20 @@ yum install postgresql12-server
 systemctl enable postgresql-12
 systemctl start postgresql-12
 ```
+>postgis插件安装参照[网址](https://www.cnblogs.com/sunnyeveryday/p/11442332.html)
+
+```sh?linenums
+yum search postgis
+yum install -y postgis30_12.x86_64
+// 开启插件  
+# su postgres  
+# psql  
+// 开启pgsql的插件  
+postgres=# create extension postgis;  
+postgres=# create extension postgis_topology;  
+postgres=# create extension fuzzystrmatch;  
+postgres=# create extension address_standardizer;  
+postgres=# create extension address_standardizer_data_us;  
+postgres=# create extension postgis_tiger_geocoder; 
+```
+# 源码安装pg及插件
