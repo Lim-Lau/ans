@@ -1,6 +1,6 @@
 ---
 title: Head First 设计模式
-tags: 新建,模板,小书匠
+tags: 设计模式,HeadFirst,java
 renderNumberedHeading: true
 grammar_cjkRuby: true
 ---
