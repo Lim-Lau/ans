@@ -24,3 +24,7 @@ grammar_cjkRuby: true
 **观察者模式**
 >出版者（主题 Subject）+订阅者（观察者 Observer）=观察者模式
 >定义了对象之间的一对多依赖，这样一来，当一个对象改变状态时，它的所有依赖者都会收到通知并自动更新
+>java.util.Observable的黑暗面
+	>Observable是一个类
+		>因为是个类，就必须在设计时继承于它，如果某个类想同时具有Observable和其他一个超类的行为，就陷入两难，毕竟java不支持多继承。这限制了Observable的复用潜力。
+	>Observable不是个接口，无法自己独立实现和Java内置的Observer API 搭配使用，也无法将java.until的实现换成另一套做法的实现（比如：Observable 将关键的方法保护起来，意味着：除非继承Observable，否则无法创建Observable实列并组合到自己的对象中来），这违反了第二设计原则：“多用组合，少用继承”。
