@@ -86,6 +86,10 @@ grammar_cjkRuby: true
 	rm -rf * 
 	#解压pinpoint-web到/webapps/ROOT目录
 	unzip pinpoint-web-1.8.4.war -d ROOT 
+	#修改/conf/server.xml文件，将8005、8080、8009端口分别改为2005、2080、2009
+	cd /usr/local/apache-tomcat-2080/bin
+	#启动tomcat容器
+	./startup.sh 
 	```
     6.
  - 
