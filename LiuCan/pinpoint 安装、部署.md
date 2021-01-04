@@ -119,5 +119,3 @@ grammar_cjkRuby: true
 	 打开安装地址：http://ip:2080 可查看pinpoint收集情况
 	
 	```
-	6.3. 
- - 
