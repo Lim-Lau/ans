@@ -5,8 +5,6 @@ renderNumberedHeading: true
 grammar_cjkRuby: true
 ---
 
-## 序章
-
  - 软件准备：
 	jdk-8u111-linux-x64.tar.gz #jdk
 	
