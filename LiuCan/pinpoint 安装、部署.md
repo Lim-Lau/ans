@@ -51,6 +51,28 @@ grammar_cjkRuby: true
 		rm -rf * 
 		#解压pinpoint-collector到/webapps/ROOT目录
 		unzip /var/ftp/pub/pinpoint-collector-1.8.4.war -d ROOT 
+		#修改/conf/server.xml文件，将8005、8080、8009端口分别改为1005、1080、1009
+		cd /usr/local/apache-tomcat-1080/bin
+		./startup.sh #启动tomcat容器
 	```
-    4.
+    4.安装pinpoint-web
+    ```sh?linenums
+	#进入安装目录
+	cd /usr/local/ 
+	#解压tomcat
+    tar -zxvf apache-tomcat-9.0.24.tar.gz 
+	#重命名目录
+    mv apache-tomcat-9.0.24/ apache-tomcat-2080/ 
+    cd apache-tomcat-2080/webapps/
+	#删除所有默认应用
+    rm -rf * 
+	#解压pinpoint-web到/webapps/ROOT目录
+    unzip /var/ftp/pub/pinpoint-web-1.8.4.war -d ROOT 
+	#修改/conf/server.xml文件，将8005、8080、8009端口分别改为2005、2080、2009
+	cd /usr/local/apache-tomcat-2080/bin
+	#启动tomcat容器
+	./startup.sh 
+	```
+	
+    5.
  - 
