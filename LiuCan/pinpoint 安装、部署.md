@@ -1,6 +1,6 @@
 ---
 title: pinpoint 安装、部署 
-tags: 新建,模板,小书匠
+tags: pinpoint,运维,技术
 renderNumberedHeading: true
 grammar_cjkRuby: true
 ---
