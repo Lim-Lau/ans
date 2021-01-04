@@ -34,6 +34,10 @@ grammar_cjkRuby: true
  cd /usr/local 
  #解压安装文件
  tar -zxvf hbase-1.2.6.1-bin.tar.gz
+ #启动hbase
+ ./hbase-1.2.6.1/bin/start-hbase.sh
+ #创建pinpoint表
+ ./hbase-1.2.6.1/bin/hbase shell hbase-create.hbase
 ```
 
  - 
