@@ -73,6 +73,13 @@ grammar_cjkRuby: true
 	#启动tomcat容器
 	./startup.sh 
 	```
-	
-    5.
+    5.安装pinpoint-web
+    ```sh?linenums
+	cd /usr/local/ #进入安装目录
+    tar -zxvf /var/ftp/pub/apache-tomcat-9.0.24.tar.gz #解压tomcat
+	mv apache-tomcat-9.0.24/ apache-tomcat-2080/ #重命名目录
+	cd apache-tomcat-2080/webapps/ $sudo rm -rf * #删除所有默认应用
+	unzip /var/ftp/pub/pinpoint-web-1.8.4.war -d ROOT #解压pinpoint-web到/webapps/ROOT目录
+	```
+    6.
  - 
