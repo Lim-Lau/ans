@@ -91,5 +91,33 @@ grammar_cjkRuby: true
 	#启动tomcat容器
 	./startup.sh 
 	```
-    6.
+    6.部署pinpoint-agent
+    先解压pinpoint-agent到任意目录，本文解压到/home/agent目录
+    ```sh?linenums
+	cd /home #进入安装目录
+	mkdir agent #创建文件夹
+	cd agent #进入安装文件夹
+	tar -zxvf pinpoint-agent-1.8.4.tar.gz #解压pinpoint-agent文件
+	```
+	6.1. pinpoint-agent配置和参数
+	```sh?linenums
+	pinpoint-agent的配置文件为/pinpoint.config，除profiler.collector.ip参数，其他参数可保持不变。profiler.collector.ip=127.0.0.1 #后面的ip地址为pinpoint-collector安装地址
+	```
+	6.2. 监控的项目启动方式
+	```sh?linenums
+	#Linux 环境
+	在$TOMCAT_HOME/bin/目录新增setenv.sh文件（注意.sh文件头以“#!/bin/sh”为第一行），添加配置：          #!/bin/sh
+	CATALINA_OPTS="$CATALINA_OPTS -javaagent:/home/agent/pinpoint-bootstrap-1.8.4.jar -Dpinpoint.agentId=test-01 -Dpinpoint.applicationName=test"
+	
+	#Windows 环境
+	在$TOMCAT_HOME/bin/目录新增setenv.bat文件，添加配置：
+	set CATALINA_OPTS=%CATALINA_OPTS% -javaagent:E:/agent/pinpoint-bootstrap-1.8.4.jar -Dpinpoint.agentId=test-01 -Dpinpoint.applicationName=test 
+	
+	#springboot环境配置
+	只需在java命令后面加上-javaagent:/home/agent/pinpoint-bootstrap-1.8.4.jar -Dpinpoint.agentId=xxx -Dpinpoint.applicationName=xxx参数，如：java -javaagent:/home/agent/pinpoint-bootstrap-1.8.4.jar -Dpinpoint.agentId=test-01 -Dpinpoint.applicationName=test -jar test.jar
+	#访问pinpoint-web
+	 打开安装地址：http://ip:2080 可查看pinpoint收集情况
+	
+	```
+	6.3. 
  - 
