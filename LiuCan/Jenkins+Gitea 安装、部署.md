@@ -49,4 +49,10 @@ yum install jenkins -y
   安装插件，这里可以选择推荐插件，也可以选择自定选择插件，效果如下图。
   ![安装插件1](./images/1610003721043.png)
   ![安装插件2](./images/1610003768351.png)
+  创建用户，我们选择不去创建，使用默认的admin用户，和初始密码。就行。所以我们选择continue as admin。
+  ![enter description here](./images/1610003928796.png)
+- 登录Jenkins
+  在浏览器中输入：(http://ip:8080),填写admin用户和初始化密码就登陆进去了。
+  jenkins 主界面
+  ![enter description here](./images/1610004034070.png)
 - 
