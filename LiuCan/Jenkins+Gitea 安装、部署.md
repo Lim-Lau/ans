@@ -148,8 +148,21 @@ systemctl status gitea
   4.现在可以测试连接其他服务器是否不需要密码登录，可以看到确实成功了。
   登录其他服务器命令：ssh 192.168.137.130     #ssh serverid
   ![enter description here](./images/1610008295076.png)
-- 添加Jenkins全局凭证
-  登录Jenkins，点击左侧按钮Manage Jenkins 后选择Manage Credentials进行添加、配置
+- 添加Jenkins全局凭证（该凭据用于获取对gitea服务器的相关操作：代码拉取等。所以应配置gitea服务的用户名、密码信息）
+  登录Jenkins，点击左侧按钮Manage Jenkins 后选择Manage Credentials
   ![enter description here](./images/1610008708020.png)
+  选择全局凭据，进行添加、配置
+  ![enter description here](./images/1610008797429.png)
   
+- 配置多分支pipeline项目
+  1.新建item（项目名+类型）
+  ![enter description here](./images/1610009143723.png)
+  2.配置信息
+  名称、描述、分支源及触发信息
+  ![enter description here](./images/1610009283887.png)
+  ![enter description here](./images/1610009302999.png)
+  
+- 配置webhook
+  ![enter description here](./images/1610009942760.png)
+  配置url（http://jenkins.test.emasapple.cn/gitea-webhook/post） 、Http方法(post)、触发条件(仓库、合并)、分支过滤（按需配置）
 - 
