@@ -64,4 +64,73 @@ yum install jenkins -y
  #### 安装gitea
  - 安装MySQL 数据库
    安装完成后，安装MySQL，至少5.5.3版本。
+ - 安装Git
+   
+
+``` sh?linenums
+yum -y install git
+```
+
+ - 安装Gitea
+	   最新版本下载地址：https://dl.gitea.io/gitea。
+
+``` sh?linenums
+cd /usr/local/gitea
+
+wget -O gitea https://dl.gitea.io/gitea/1.6.0/gitea-1.6.0-linux-amd64
+
+chmod +x gitea
+
+./gitea web
+```
+	接下来打开http://ip:3000即可。
+ - 域名访问
+   如果想用域名访问，可以用Nginx反代。反代配置为：
+   
+
+``` sh?linenums
+#在配置文件里添加
+
+location / {
+
+proxy_pass http://localhost:3000
+
+proxy_redirect off;
+
+proxy_set_header X-Real-IP $remote_addr;
+
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+}
+```
+
+ - 使用服务来启动
+   新建一个rclone.service文件：
+``` sh?linenums
+vi /usr/lib/systemd/system/gitea.service
+#写入
+[Unit]
+Description=gitea
+
+[Service]
+User=root
+ExecStart=/usr/local/gitea/gitea
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+# 重载daemon，让新的服务文件生效：
+systemctl daemon-reload
+用systemctl来启动gitea：
+systemctl start gitea
+设置开机启动：
+systemctl enable gitea
+停止、查看状态可以用：
+systemctl stop gitea
+
+systemctl status gitea
+# ​​​​​​​接下来就是打开网址去初始化gitea配置。
+```
+
+
  - 
