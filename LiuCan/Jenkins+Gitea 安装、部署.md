@@ -150,5 +150,6 @@ systemctl status gitea
   ![enter description here](./images/1610008295076.png)
 - 添加Jenkins全局凭证
   登录Jenkins，点击左侧按钮Manage Jenkins 后选择Manage Credentials进行添加、配置
-  ![enter description here](./images/1610008631401.png)
+  ![enter description here](./images/1610008708020.png)
+  
 - 
