@@ -55,4 +55,8 @@ yum install jenkins -y
   在浏览器中输入：(http://ip:8080),填写admin用户和初始化密码就登陆进去了。
   jenkins 主界面
   ![enter description here](./images/1610004034070.png)
-- 
+- 安装插件（git、node、maven等）
+  点进去之后，点击Jenkins右侧GlobalToolConfiguration后，进去该页面进行勾选、安装。
+ ![enter description here](./images/1610004377152.png)
+ 
+ ####
