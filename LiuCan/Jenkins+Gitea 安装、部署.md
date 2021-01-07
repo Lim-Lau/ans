@@ -129,8 +129,26 @@ systemctl enable gitea
 systemctl stop gitea
 
 systemctl status gitea
-# ​​​​​​​接下来就是打开网址去初始化gitea配置。
+#接下来就是打开网址去初始化gitea配置。
 ```
-
-
- - 
+#### 项目部署、构建
+- 机器互信（Jenkins服务器与目的服务器-部署项目的服务器进行互信）
+  1.在客户端生成公钥私钥对
+  命令：ssh-keygen -t rsa
+  默认回车，系统在/root/.ssh下生成id_rsa、id_rsa.pub
+  查看系统生成的公钥私钥对
+  命令：ls /root/.ssh
+  可以看到如下的文件
+  ![enter description here](./images/1610008231213.png)
+  3.将生成的公钥私钥对id_rsa.pub发送到其他的服务器上。
+  命令：ssh-copy-id -i /root/.ssh/id_rsa.pub 192.168.137.129 
+  注：命令可简单记忆为 ssh-copy-id -i 公钥私钥对文件 服务器ip地址
+  ![enter description here](./images/1610008260686.png)
+  可以看到成功将公钥私钥对发送到了其他服务器，更多服务器一样操作即可。
+  4.现在可以测试连接其他服务器是否不需要密码登录，可以看到确实成功了。
+  登录其他服务器命令：ssh 192.168.137.130     #ssh serverid
+  ![enter description here](./images/1610008295076.png)
+- 添加Jenkins全局凭证
+  登录Jenkins，点击左侧按钮Manage Jenkins 后选择Manage Credentials进行添加、配置
+  ![enter description here](./images/1610008631401.png)
+- 
