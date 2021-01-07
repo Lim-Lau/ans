@@ -62,4 +62,6 @@ yum install jenkins -y
  #### 安装open-jdk (略)
  
  #### 安装gitea
- 
+ - 安装MySQL 数据库
+   安装完成后，安装MySQL，至少5.5.3版本。
+ - 
