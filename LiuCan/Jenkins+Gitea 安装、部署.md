@@ -59,4 +59,7 @@ yum install jenkins -y
   点进去之后，点击Jenkins右侧GlobalToolConfiguration后，进去该页面进行勾选、安装。
  ![enter description here](./images/1610004377152.png)
  
- ####
+ #### 安装open-jdk (略)
+ 
+ #### 安装gitea
+ 
