@@ -165,4 +165,51 @@ systemctl status gitea
 - 配置webhook
   ![enter description here](./images/1610009942760.png)
   配置url（http://jenkins.test.emasapple.cn/gitea-webhook/post） 、Http方法(post)、触发条件(仓库、合并)、分支过滤（按需配置）
+- 项目中加入Jenkinsfile文件
+  前端项目配置：
+
+``` sh?linenums
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Get some code from a Gitea repository
+                git branch: 'develop', credentialsId: 'Admin', url: 'https://git.chinarecrm.com.cn/EOP/EOP-DEVELOPER-SITE.git'
+                // yarn build project
+                sh "yarn && yarn run build"
+                // scope to publisher
+                sshPublisher(publishers: [sshPublisherDesc(configName: '172.29.121.111', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'sh /eop/sh/start_sit.sh', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '/', sourceFiles: 'dist/**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+
+            }
+        }
+    }
+}
+```
+后端项目配置：
+
+``` sh?linenums
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Get some code from a Gitea repository
+                git branch: 'develop', credentialsId: 'Admin', url: 'https://git.chinarecrm.com.cn/EOP/eop-rest.git'
+                // mvn package
+                sh "mvn clean package -Dmaven.test.skip=true"
+                // bak dashboard
+                sshPublisher(publishers: [sshPublisherDesc(configName: '172.29.121.111', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'sh /eop/sh/bak_rest.sh', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+
+                // scope to publisher
+                sshPublisher(publishers: [sshPublisherDesc(configName: '172.29.121.111', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'sh /eop/sh/start_rest.sh', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'target', sourceFiles: 'target/*.jar')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+            }
+
+        }
+    }
+}
+```
+
 - 
