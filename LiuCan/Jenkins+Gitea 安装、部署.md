@@ -234,7 +234,3 @@ pipeline {
 	echo 'start application '
 	nohup java  -jar eop-rest-1.0.0-RELEASE.jar --spring.config.location=/eop/config/application.yml >/dev/null 2>&1  &
 ```
-	
-
-  
-- 
