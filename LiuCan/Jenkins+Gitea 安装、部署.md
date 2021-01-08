@@ -216,23 +216,23 @@ pipeline {
   
   前端、后端：
   ``` sh?linenums
+	  #前端
  	tar -cvf sit.tar sit
 	mv  dist sit
-```
-``` sh?linenums
-#!/bin/bash
-# 检查应用进程
-cd /root
-for x in ` awk '{print $1}' eop-rest.pid `
-{
-echo "kill application"
-kill -9 $x
-}
+	#后端
+	#!/bin/bash
+	# 检查应用进程
+	cd /root
+	for x in ` awk '{print $1}' eop-rest.pid `
+	{
+	echo "kill application"
+	kill -9 $x
+	}
 
-#启动应用进程
-cd /eop/apps
-echo 'start application '
-nohup java  -jar eop-rest-1.0.0-RELEASE.jar --spring.config.location=/eop/config/application.yml >/dev/null 2>&1  &
+	#启动应用进程
+	cd /eop/apps
+	echo 'start application '
+	nohup java  -jar eop-rest-1.0.0-RELEASE.jar --spring.config.location=/eop/config/application.yml >/dev/null 2>&1  &
 ```
 	
 
