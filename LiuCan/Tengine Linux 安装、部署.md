@@ -38,6 +38,7 @@ nginx
 nginx -s reload
 ```
 ## 配置nginx文件
+
 ```sh?linenums
 user  root;
 worker_processes  1;
