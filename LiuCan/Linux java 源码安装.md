@@ -1,5 +1,5 @@
 ---
-title: Linux java 源码安装 
+title: Linux Java 源码安装 
 tags: java,linux,源码
 renderNumberedHeading: true
 grammar_cjkRuby: true
