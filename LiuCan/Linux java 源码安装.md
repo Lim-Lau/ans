@@ -46,3 +46,19 @@ getconf LONG_BIT
 wget https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 #https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 ```
+
+# 解压、安装
+```sh?linenums
+#解压
+tar -zxvf jdk-8u221-linux-x64.tar.gz -C /usr/java
+#配置环境变量（编辑环境变量表，最后面加上下面的配置信息）
+ vi /etc/profile
+ #set java env
+JAVA_HOME=/usr/java/jdk1.8.0_211
+CLASSPATH=.:$JAVA_HOME/lib.tools.jar
+PATH=$JAVA_HOME/bin:$PATH
+export JAVA_HOME CLASSPATH PATH
+
+#使新配置生效
+source /etc/profile
+```
