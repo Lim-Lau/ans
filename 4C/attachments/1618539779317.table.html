@@ -1,0 +1,354 @@
+<table class='table table-celled table-component' border='1' style='border-collapse: collapse; width: 99.8668%;' id='tinymcetable' > <thead>
+<tr>
+<td style="width: 34.7537%;">
+<p><strong><strong>配置key</strong></strong></p>
+</td>
+<td style="width: 18.3755%;">
+<p><strong><strong>配置项说明</strong></strong></p>
+</td>
+<td style="width: 41.5446%;">
+<p><strong><strong>配置描述</strong></strong></p>
+</td>
+<td style="width: 5.19308%;">
+<p><strong><strong>备注</strong></strong></p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.db-type</p>
+</td>
+<td style="width: 18.3755%;">
+<p>数据库类型</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值: postgresql</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.url</p>
+</td>
+<td style="width: 18.3755%;">
+<p>数据库地址URL</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值: jdbc:postgres_jts://IP:5432/survey-assistant</p>
+</td>
+<td style="width: 5.19308%;">
+<p>将IP数据库IP地址修改crs为使用数据库实例名称</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.username</p>
+</td>
+<td style="width: 18.3755%;">
+<p>数据库用户名</p>
+</td>
+<td style="width: 41.5446%;">
+<p>默认：postgres值：修改为数据用户名</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.password</p>
+</td>
+<td style="width: 18.3755%;">
+<p>数据库密码</p>
+</td>
+<td style="width: 41.5446%;">
+<p>默认：postgres值：修改为数据库密码</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.driver-class-name</p>
+</td>
+<td style="width: 18.3755%;">
+<p>驱动名称</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：org.postgis.jts.JtsWrapper</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.filters</p>
+</td>
+<td style="width: 18.3755%;">
+<p>过滤机制</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：stat,wall,log4j2</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.initial-size</p>
+</td>
+<td style="width: 18.3755%;">
+<p>初始化时建立物理连接的个数</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：10</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.min-idle</p>
+</td>
+<td style="width: 18.3755%;">
+<p>最小连接数</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：1</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.max-active</p>
+</td>
+<td style="width: 18.3755%;">
+<p>最大活动连接数</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：50</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.max-wait</p>
+</td>
+<td style="width: 18.3755%;">
+<p>超时等待</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：60000</p>
+</td>
+<td style="width: 5.19308%;">
+<p>毫秒</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.time-between-eviction-runs-milli</p>
+</td>
+<td style="width: 18.3755%;">
+<p>关闭空闲连接的检测时间间隔</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：60000</p>
+</td>
+<td style="width: 5.19308%;">
+<p>毫秒</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.min-evictable-idle-time-milli</p>
+</td>
+<td style="width: 18.3755%;">
+<p>连接的最小生存时间</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：300000</p>
+</td>
+<td style="width: 5.19308%;">
+<p>毫秒</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid. validation-query</p>
+</td>
+<td style="width: 18.3755%;">
+<p>校验sql</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：SELECT 'CRS'</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.test-while-idle</p>
+</td>
+<td style="width: 18.3755%;">
+<p>申请连接时检测空闲时间</p>
+</td>
+<td style="width: 41.5446%;">
+<p>默认：false值：true</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.test-on-borrow</p>
+</td>
+<td style="width: 18.3755%;">
+<p>申请连接时直接检测连接是否有效</p>
+</td>
+<td style="width: 41.5446%;">
+<p>默认：false值：true</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.test-on-return</p>
+</td>
+<td style="width: 18.3755%;">
+<p>数据源配置归还连接时检测连接是否有效</p>
+</td>
+<td style="width: 41.5446%;">
+<p>默认：false值：false</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.pool-prepared-statements</p>
+</td>
+<td style="width: 18.3755%;">
+<p>开启PSCache</p>
+</td>
+<td style="width: 41.5446%;">
+<p>默认：false值：false</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.max-pool-prepared-statement-per-connection-size</p>
+</td>
+<td style="width: 18.3755%;">
+<p>设置PSCache值</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：20</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.web-stat-filter.enabled</p>
+</td>
+<td style="width: 18.3755%;">
+<p>web统计筛选器是否开启</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：true</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.web-stat-filter.url-pattern</p>
+</td>
+<td style="width: 18.3755%;">
+<p>web统计筛选器路径</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：/*</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.web-stat-filter.exclusions</p>
+</td>
+<td style="width: 18.3755%;">
+<p>web统计筛选除外路径</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：/druid/*,*.js,*.gif,*.jpg,*.png,*.css,*.ico</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.stat-view-servlet.enabled</p>
+</td>
+<td style="width: 18.3755%;">
+<p>状态视图是否开启</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：true</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.stat-view-servle.url-pattern</p>
+</td>
+<td style="width: 18.3755%;">
+<p>状态视图servlet路径</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：/druid/*</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+<tr>
+<td style="width: 34.7537%;">
+<p>spring.datasource.druid.stat-view-servle.reset-enable</p>
+</td>
+<td style="width: 18.3755%;">
+<p>状态视图servlet:重启应用</p>
+</td>
+<td style="width: 41.5446%;">
+<p>值：true</p>
+</td>
+<td style="width: 5.19308%;">
+<p>/</p>
+</td>
+</tr>
+</tbody> </table>
